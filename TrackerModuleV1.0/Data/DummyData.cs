@@ -14,21 +14,25 @@ namespace TrackerModuleV1._0.Data
             {
                 new Project()
                 {
-                    ProjectName="Wafer Sorter"
-                    
-        
+                    ProjectName="Wafer Sorter",
+                    users=new List<User>()
+
+
                 },
                 new Project()
                 {
-                    ProjectName="Bakeout Chamber"
+                    ProjectName="Bakeout Chamber",
+                    users=new List<User>()
                 },
                 new Project()
                 {
-                    ProjectName="Process Kit Transporter"
+                    ProjectName="Process Kit Transporter",
+                    users=new List<User>()
                 },
                 new Project()
                 {
-                    ProjectName="Carbon Nanotube CVD Chamber"
+                    ProjectName="Carbon Nanotube CVD Chamber",
+                    users=new List<User>()
                 }
             };
             return projects;
@@ -43,7 +47,9 @@ namespace TrackerModuleV1._0.Data
                     FirstName="Leo",
                     LastName="Passion",
                     JobRole="Engineer",
-                    ProjectNumber=context.Projects.Find(3).ProjectId,
+                    
+                   // projects=new List<Project>()
+                    //ProjectNumber=context.Projects.Find(3).ProjectId,
                     
                 },
                 new User()
@@ -51,7 +57,8 @@ namespace TrackerModuleV1._0.Data
                     FirstName="Abienash",
                     LastName="Thangavel",
                     JobRole="Design Engineer",
-                    ProjectNumber=context.Projects.Find(1).ProjectId,
+                     //projects=new List<Project>()
+                   // ProjectNumber=context.Projects.Find(1).ProjectId,
 
                 },
                 new User()
@@ -59,7 +66,8 @@ namespace TrackerModuleV1._0.Data
                     FirstName="Alex",
                     LastName="Daniel",
                     JobRole="Design Engineer",
-                    ProjectNumber=context.Projects.Find(1).ProjectId,
+                     projects=new List<Project>()
+                    //ProjectNumber=context.Projects.Find(1).ProjectId,
 
                 },
                 new User()
@@ -67,7 +75,8 @@ namespace TrackerModuleV1._0.Data
                     FirstName="Danny",
                     LastName="Edward",
                     JobRole="Design Engineer",
-                    ProjectNumber=context.Projects.Find(1).ProjectId,
+                    // projects=new List<Project>()
+                    //ProjectNumber=context.Projects.Find(1).ProjectId,
 
                 },
                 new User()
@@ -75,11 +84,24 @@ namespace TrackerModuleV1._0.Data
                     FirstName="Devinda",
                     LastName="Liyanage",
                     JobRole="R@D Engineer",
-                    ProjectNumber=context.Projects.Find(4).ProjectId,
+                     //projects=new List<Project>()
+                   // ProjectNumber=context.Projects.Find(4).ProjectId,
+
+                },
+                new User()
+                {
+                    FirstName="Chamali",
+                    LastName="Liyanage",
+                    JobRole="R@D Engineer",
+                     //projects=new List<Project>()
+                   // ProjectNumber=context.Projects.Find(4).ProjectId,
 
                 }
             };
             return users;
         }
+
+        
+        
     }
 }
