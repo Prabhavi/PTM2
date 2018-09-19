@@ -197,6 +197,50 @@
     <Compile Include="Migrations\PTM\201809171150082_InitialCreate4.Designer.cs">
       <DependentUpon>201809171150082_InitialCreate4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PTM\201809181043180_ManyToMany.cs" />
+    <Compile Include="Migrations\PTM\201809181043180_ManyToMany.Designer.cs">
+      <DependentUpon>201809181043180_ManyToMany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181050550_ManyToMany1.cs" />
+    <Compile Include="Migrations\PTM\201809181050550_ManyToMany1.Designer.cs">
+      <DependentUpon>201809181050550_ManyToMany1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181108041_ManyToMany2.cs" />
+    <Compile Include="Migrations\PTM\201809181108041_ManyToMany2.Designer.cs">
+      <DependentUpon>201809181108041_ManyToMany2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181109487_ManyToMany3.cs" />
+    <Compile Include="Migrations\PTM\201809181109487_ManyToMany3.Designer.cs">
+      <DependentUpon>201809181109487_ManyToMany3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181110387_ManyToMany4.cs" />
+    <Compile Include="Migrations\PTM\201809181110387_ManyToMany4.Designer.cs">
+      <DependentUpon>201809181110387_ManyToMany4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181111494_ManyToMany5.cs" />
+    <Compile Include="Migrations\PTM\201809181111494_ManyToMany5.Designer.cs">
+      <DependentUpon>201809181111494_ManyToMany5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181112254_ManyToMany6.cs" />
+    <Compile Include="Migrations\PTM\201809181112254_ManyToMany6.Designer.cs">
+      <DependentUpon>201809181112254_ManyToMany6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809181121542_ManyToMany7.cs" />
+    <Compile Include="Migrations\PTM\201809181121542_ManyToMany7.Designer.cs">
+      <DependentUpon>201809181121542_ManyToMany7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809190307007_ManyToMany8.cs" />
+    <Compile Include="Migrations\PTM\201809190307007_ManyToMany8.Designer.cs">
+      <DependentUpon>201809190307007_ManyToMany8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809190311415_ManyToMany9.cs" />
+    <Compile Include="Migrations\PTM\201809190311415_ManyToMany9.Designer.cs">
+      <DependentUpon>201809190311415_ManyToMany9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809190348417_ManyToMany10.cs" />
+    <Compile Include="Migrations\PTM\201809190348417_ManyToMany10.Designer.cs">
+      <DependentUpon>201809190348417_ManyToMany10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PTM\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -301,6 +345,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\PTM\201809171150082_InitialCreate4.resx">
       <DependentUpon>201809171150082_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181043180_ManyToMany.resx">
+      <DependentUpon>201809181043180_ManyToMany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181050550_ManyToMany1.resx">
+      <DependentUpon>201809181050550_ManyToMany1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181108041_ManyToMany2.resx">
+      <DependentUpon>201809181108041_ManyToMany2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181109487_ManyToMany3.resx">
+      <DependentUpon>201809181109487_ManyToMany3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181110387_ManyToMany4.resx">
+      <DependentUpon>201809181110387_ManyToMany4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181111494_ManyToMany5.resx">
+      <DependentUpon>201809181111494_ManyToMany5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181112254_ManyToMany6.resx">
+      <DependentUpon>201809181112254_ManyToMany6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809181121542_ManyToMany7.resx">
+      <DependentUpon>201809181121542_ManyToMany7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809190307007_ManyToMany8.resx">
+      <DependentUpon>201809190307007_ManyToMany8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809190311415_ManyToMany9.resx">
+      <DependentUpon>201809190311415_ManyToMany9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809190348417_ManyToMany10.resx">
+      <DependentUpon>201809190348417_ManyToMany10.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
