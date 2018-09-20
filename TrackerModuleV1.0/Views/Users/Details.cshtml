@@ -35,13 +35,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ProjectNumber)
+            @Html.DisplayName("Projects Involved In")
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProjectNumber)
-        </dd>
-
+        <table class="table">
+            <dd>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Project ID</th>
+                </tr>
+                @foreach (var item in Model.projects)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectId)
+                    </td>
+                </tr>
+                }
+            </dd>
+        </table>
     </dl>
 </div>
 <p>

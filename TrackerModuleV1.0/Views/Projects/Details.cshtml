@@ -17,16 +17,37 @@
         <dd>
             @Html.DisplayFor(model => model.ProjectName)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayName("Collaborators")
         </dt>
+        <table class="table">
+            <dd>
+                <tr>
+                    <th>Full Name</th>
+                    <th>JobRole</th>
+                </tr>
+                    @foreach (var item in Model.users)
+                    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.JobRole)
+                    </td>
+                </tr>
+            }
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.UserId)
+                </dd>*@
+        </table>
+        </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId }) |

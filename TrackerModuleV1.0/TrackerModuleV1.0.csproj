@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -241,6 +242,10 @@
     <Compile Include="Migrations\PTM\201809190348417_ManyToMany10.Designer.cs">
       <DependentUpon>201809190348417_ManyToMany10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PTM\201809191049002_InitialCreate5.cs" />
+    <Compile Include="Migrations\PTM\201809191049002_InitialCreate5.Designer.cs">
+      <DependentUpon>201809191049002_InitialCreate5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PTM\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -320,6 +325,7 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Projects\Collaborators.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -378,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\PTM\201809190348417_ManyToMany10.resx">
       <DependentUpon>201809190348417_ManyToMany10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809191049002_InitialCreate5.resx">
+      <DependentUpon>201809191049002_InitialCreate5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

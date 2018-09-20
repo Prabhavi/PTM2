@@ -14,11 +14,12 @@ namespace TrackerModuleV1._0.Controllers
     public class ProjectsController : Controller
     {
         private PTMContex db = new PTMContex();
-
+       
         // GET: Projects
         public ActionResult Index()
         {
             return View(db.Projects.ToList());
+            
         }
 
         // GET: Projects/Details/5
@@ -28,6 +29,7 @@ namespace TrackerModuleV1._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            
             Project project = db.Projects.Find(id);
             if (project == null)
             {
@@ -47,7 +49,7 @@ namespace TrackerModuleV1._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProjectId,ProjectName,UserId")] Project project)
+        public ActionResult Create([Bind(Include = "ProjectId,ProjectName,ShortDescription")] Project project)
         {
             if (ModelState.IsValid)
             {
