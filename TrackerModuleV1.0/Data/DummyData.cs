@@ -15,30 +15,33 @@ namespace TrackerModuleV1._0.Data
                 new Project()
                 {
                     ProjectName="Wafer Sorter",
-                    users=new List<User>()
-
+                    users=new List<User>(),
+                    parts=new List<Part>()
 
                 },
                 new Project()
                 {
                     ProjectName="Bakeout Chamber",
-                    users=new List<User>()
+                    users=new List<User>(),
+                    parts=new List<Part>()
                 },
                 new Project()
                 {
                     ProjectName="Process Kit Transporter",
-                    users=new List<User>()
+                    users=new List<User>(),
+                    parts=new List<Part>()
                 },
                 new Project()
                 {
                     ProjectName="Carbon Nanotube CVD Chamber",
-                    users=new List<User>()
+                    users=new List<User>(),
+                    parts=new List<Part>()
                 }
             };
             return projects;
             
          }
-        public static List<User> getUsers(PTMContex context)
+        public static List<User> getUsers()
         {
             List<User> users = new List<User>()
             {
@@ -101,7 +104,43 @@ namespace TrackerModuleV1._0.Data
             return users;
         }
 
-        
-        
+        public static List<Part> getParts(PTMContex contex)
+        {
+            List<Part> parts = new List<Part>()
+            {
+                new Part()
+                {
+                    PartName="ScrewDriver",
+                    PartDescription="Triwing Triangle Screw-Driver Repair Fixing Tool for Nintendo Wii DS Lite NDSL",
+                    NovenaTecPartNumber="NOVSCREW1001",
+                    SwissRanksPartNumber="SWSCREW1001",
+                    OEMPartNumber="OEMSCREW1001",
+                    VendorPartNumber="ABCSCREW1001",
+                    CreatedBy= contex.Users.Find(2),
+                    ApproveBy=contex.Users.Find(1),
+                    Status="Approved",
+                    StockQuantity=10
+                    
+
+                },
+
+                new Part()
+                {
+                    PartName="BreadBoard",
+                    PartDescription="Round Hole Solderless Breadboard 840 Points",
+                    NovenaTecPartNumber="NOVBBOARD1002",
+                    SwissRanksPartNumber="SWBBOARD1002",
+                    OEMPartNumber="OEMBBOARD1002",
+                    VendorPartNumber="FXYBBOARD1002",
+                    CreatedBy= contex.Users.Find(1),
+                    Status="Send for Approve",
+                    StockQuantity=0
+
+                }
+            };
+
+            return parts;
+        }
+
     }
 }

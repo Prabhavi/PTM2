@@ -16,7 +16,6 @@ namespace TrackerModuleV1._0.Migrations.PTM
         void AddOrUpdateUser(PTMContex context, string ProjectName, string FirstName)
         {
             var prjct = context.Projects.SingleOrDefault(p => p.ProjectName == ProjectName);
-            //Console.WriteLine(prjct.ProjectName);
             var usr = context.Users.SingleOrDefault(u => u.FirstName == FirstName);
             if (usr != null)
             {
@@ -25,6 +24,15 @@ namespace TrackerModuleV1._0.Migrations.PTM
             }
 
 
+        }
+        void AddorUpdatePart(PTMContex contex, string projectName,string partName)
+        {
+            var prjct = contex.Projects.SingleOrDefault(p => p.ProjectName == projectName);
+            var prt = contex.parts.SingleOrDefault(i => i.PartName == partName);
+            if(prt != null)
+            {
+                prjct.parts.Add(contex.parts.Single(p => p.PartName == partName));
+            }
         }
         protected override void Seed(TrackerModuleV1._0.Data.PTMContex context)
         {
@@ -46,14 +54,21 @@ namespace TrackerModuleV1._0.Migrations.PTM
             context.SaveChanges();
 
             context.Users.AddOrUpdate(
-                u => new { u.FirstName, u.LastName }, DummyData.getUsers(context).ToArray());
+                u => new { u.FirstName, u.LastName }, DummyData.getUsers().ToArray());
             context.SaveChanges();
 
+            context.parts.AddOrUpdate(
+                p => p.PartId, DummyData.getParts(context).ToArray());
+            context.SaveChanges();
             AddOrUpdateUser(context, "Wafer Sorter", "Abienash");
             AddOrUpdateUser(context, "Bakeout Chamber", "Leo");
             AddOrUpdateUser(context, "Carbon Nanotube CVD Chamber", "Devinda");
             AddOrUpdateUser(context, "Process Kit Transporter", "Danny");
             AddOrUpdateUser(context, "Bakeout Chamber", "Devinda");
+
+            AddorUpdatePart(context, "Wafer Sorter", "ScrewDriver");
+            AddorUpdatePart(context, "Process Kit Transporter", "BreadBoard");
+            AddorUpdatePart(context, "Process Kit Transporter", "ScrewDriver");
             context.SaveChanges();
 
         }

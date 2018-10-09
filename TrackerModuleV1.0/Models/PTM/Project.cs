@@ -8,10 +8,7 @@ namespace TrackerModuleV1._0.Models.PTM
 {
     public class Project
     {
-        //public Project()
-        //{
-        //    this.users = new HashSet<User>();
-        //}
+        
         [Key]
         public int ProjectId { get; set; }
         [Required]
@@ -20,5 +17,7 @@ namespace TrackerModuleV1._0.Models.PTM
 
         //public int UserId { get; set; }
         public virtual ICollection<User> users { get; set; }
+
+        public virtual ICollection <Part> parts { get; set; }
     }
 }
