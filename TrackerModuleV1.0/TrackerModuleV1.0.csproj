@@ -246,10 +246,19 @@
     <Compile Include="Migrations\PTM\201809191049002_InitialCreate5.Designer.cs">
       <DependentUpon>201809191049002_InitialCreate5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PTM\201809210655456_Add_PartsDB.cs" />
+    <Compile Include="Migrations\PTM\201809210655456_Add_PartsDB.Designer.cs">
+      <DependentUpon>201809210655456_Add_PartsDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201809210703412_Add_PartsDB1.cs" />
+    <Compile Include="Migrations\PTM\201809210703412_Add_PartsDB1.Designer.cs">
+      <DependentUpon>201809210703412_Add_PartsDB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PTM\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PTM\Part.cs" />
     <Compile Include="Models\PTM\Project.cs" />
     <Compile Include="Models\PTM\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -319,13 +328,14 @@
     <Content Include="Views\Projects\Delete.cshtml" />
     <Content Include="Views\Projects\Details.cshtml" />
     <Content Include="Views\Projects\Edit.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\All.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Projects\Collaborators.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -387,6 +397,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\PTM\201809191049002_InitialCreate5.resx">
       <DependentUpon>201809191049002_InitialCreate5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809210655456_Add_PartsDB.resx">
+      <DependentUpon>201809210655456_Add_PartsDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201809210703412_Add_PartsDB1.resx">
+      <DependentUpon>201809210703412_Add_PartsDB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

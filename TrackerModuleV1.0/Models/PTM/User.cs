@@ -23,6 +23,7 @@ namespace TrackerModuleV1._0.Models.PTM
         public string JobRole { get; set; }
         //public int ProjectNumber { get; set; }
         //public Project Project { get; set; }
+        public ICollection<Part> Parts { get; set; }
         public virtual ICollection<Project> projects { get; set; }
     }
 }

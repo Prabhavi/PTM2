@@ -18,16 +18,23 @@
             @Html.DisplayFor(model => model.ProjectName)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.ShortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDescription)
+        </dd>
+        <dt>
             @Html.DisplayName("Collaborators")
         </dt>
         <table class="table">
             <dd>
-                <tr>
-                    <th>Full Name</th>
-                    <th>JobRole</th>
-                </tr>
-                    @foreach (var item in Model.users)
-                    {
+            <tr>
+                <th>Full Name</th>
+                <th>JobRole</th>
+            </tr>
+            @foreach (var item in Model.users)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.FullName)
@@ -37,17 +44,17 @@
                     </td>
                 </tr>
             }
-                </dd>
+            </dd>
 
-                @*<dt>
-                    @Html.DisplayNameFor(model => model.UserId)
-                </dt>
+            @*<dt>
+                @Html.DisplayNameFor(model => model.UserId)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.UserId)
-                </dd>*@
+            <dd>
+                @Html.DisplayFor(model => model.UserId)
+            </dd>*@
         </table>
-        </dl>
+    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectId }) |

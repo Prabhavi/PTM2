@@ -17,6 +17,8 @@ namespace TrackerModuleV1._0.Data
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Part> parts { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
@@ -30,6 +32,25 @@ namespace TrackerModuleV1._0.Data
                     m.MapLeftKey("ProjectId");
                     m.MapRightKey("UserId");
                 });
+
+            modelBuilder.Entity<Project>()
+                .HasMany(i => i.parts)
+                .WithMany(p => p.Projects)
+                .Map(m =>
+                {
+                    m.ToTable("PartProject");
+                    m.MapLeftKey("PartId");
+                    m.MapRightKey("ProjectId");
+                });
+
+            modelBuilder.Entity<Part>()
+                .HasRequired<User>(p => p.CreatedBy)
+                .WithMany(u => u.Parts)
+                .HasForeignKey<int>(p => p.CreatedUserId);
+                
+
+           
+
             base.OnModelCreating(modelBuilder);
 
             //modelBuilder.Entity<Project>()

@@ -14,9 +14,22 @@ namespace TrackerModuleV1._0.Controllers
     public class ProjectsController : Controller
     {
         private PTMContex db = new PTMContex();
-       
-        // GET: Projects
+
+
         public ActionResult Index()
+        {
+            PTMContex ptmContex = new PTMContex();
+            var getProjectList = ptmContex.Projects.ToList();
+            SelectList Idlist = new SelectList(getProjectList, "ProjectId", "ProjectId");
+            SelectList Namelist = new SelectList(getProjectList, "ProjectName", "ProjectName");
+            ViewBag.projectListId = Idlist;
+            ViewBag.projectListName = Namelist;
+            return View();
+
+        }
+        // GET: Projects
+
+        public ActionResult All()
         {
             return View(db.Projects.ToList());
             
@@ -43,6 +56,10 @@ namespace TrackerModuleV1._0.Controllers
         {
             return View();
         }
+
+
+        
+
 
         // POST: Projects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -116,6 +133,20 @@ namespace TrackerModuleV1._0.Controllers
             db.Projects.Remove(project);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="projectName"></param>
+        /// <param name="description"></param>
+        /// <returns></returns>
+        public ActionResult Search(Project proj)
+        {
+            int proId = proj.ProjectId;
+
+            return View();
         }
 
         protected override void Dispose(bool disposing)
