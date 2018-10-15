@@ -254,21 +254,75 @@
     <Compile Include="Migrations\PTM\201809210703412_Add_PartsDB1.Designer.cs">
       <DependentUpon>201809210703412_Add_PartsDB1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\PTM\201810111126219_level Model.cs" />
+    <Compile Include="Migrations\PTM\201810111126219_level Model.Designer.cs">
+      <DependentUpon>201810111126219_level Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810111151094_InitialCreate6.cs" />
+    <Compile Include="Migrations\PTM\201810111151094_InitialCreate6.Designer.cs">
+      <DependentUpon>201810111151094_InitialCreate6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120450362_MODEL UPDATE.cs" />
+    <Compile Include="Migrations\PTM\201810120450362_MODEL UPDATE.Designer.cs">
+      <DependentUpon>201810120450362_MODEL UPDATE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120451279_level_Models.cs" />
+    <Compile Include="Migrations\PTM\201810120451279_level_Models.Designer.cs">
+      <DependentUpon>201810120451279_level_Models.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120823498_MODEL UPDATED.cs" />
+    <Compile Include="Migrations\PTM\201810120823498_MODEL UPDATED.Designer.cs">
+      <DependentUpon>201810120823498_MODEL UPDATED.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120828339_MODEL UPDATED2.cs" />
+    <Compile Include="Migrations\PTM\201810120828339_MODEL UPDATED2.Designer.cs">
+      <DependentUpon>201810120828339_MODEL UPDATED2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120844201_MODEL UPDATED3.cs" />
+    <Compile Include="Migrations\PTM\201810120844201_MODEL UPDATED3.Designer.cs">
+      <DependentUpon>201810120844201_MODEL UPDATED3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120846513_MODEL UPDATED4.cs" />
+    <Compile Include="Migrations\PTM\201810120846513_MODEL UPDATED4.Designer.cs">
+      <DependentUpon>201810120846513_MODEL UPDATED4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810120924215_MODEL UPDATED5.cs" />
+    <Compile Include="Migrations\PTM\201810120924215_MODEL UPDATED5.Designer.cs">
+      <DependentUpon>201810120924215_MODEL UPDATED5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810141126586_InitialCreatexc.cs" />
+    <Compile Include="Migrations\PTM\201810141126586_InitialCreatexc.Designer.cs">
+      <DependentUpon>201810141126586_InitialCreatexc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810141558142_afterModelUpdate.cs" />
+    <Compile Include="Migrations\PTM\201810141558142_afterModelUpdate.Designer.cs">
+      <DependentUpon>201810141558142_afterModelUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810150327206_UpdateModelNew.cs" />
+    <Compile Include="Migrations\PTM\201810150327206_UpdateModelNew.Designer.cs">
+      <DependentUpon>201810150327206_UpdateModelNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810150350436_UpdateModelNewx.cs" />
+    <Compile Include="Migrations\PTM\201810150350436_UpdateModelNewx.Designer.cs">
+      <DependentUpon>201810150350436_UpdateModelNewx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PTM\201810150943358_UpdateModelNewx1.cs" />
+    <Compile Include="Migrations\PTM\201810150943358_UpdateModelNewx1.Designer.cs">
+      <DependentUpon>201810150943358_UpdateModelNewx1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\PTM\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PTM\Level.cs" />
     <Compile Include="Models\PTM\Part.cs" />
     <Compile Include="Models\PTM\Project.cs" />
     <Compile Include="Models\PTM\User.cs" />
+    <Compile Include="Models\PTM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\PTM.mdf" />
-    <Content Include="App_Data\PTM_log.ldf">
-      <DependentUpon>PTM.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Docs\Migrations.txt" />
@@ -336,8 +390,11 @@
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Projects\Collaborators.cshtml" />
     <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\SelectedProject.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -403,6 +460,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\PTM\201809210703412_Add_PartsDB1.resx">
       <DependentUpon>201809210703412_Add_PartsDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810111126219_level Model.resx">
+      <DependentUpon>201810111126219_level Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810111151094_InitialCreate6.resx">
+      <DependentUpon>201810111151094_InitialCreate6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120450362_MODEL UPDATE.resx">
+      <DependentUpon>201810120450362_MODEL UPDATE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120451279_level_Models.resx">
+      <DependentUpon>201810120451279_level_Models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120823498_MODEL UPDATED.resx">
+      <DependentUpon>201810120823498_MODEL UPDATED.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120828339_MODEL UPDATED2.resx">
+      <DependentUpon>201810120828339_MODEL UPDATED2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120844201_MODEL UPDATED3.resx">
+      <DependentUpon>201810120844201_MODEL UPDATED3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120846513_MODEL UPDATED4.resx">
+      <DependentUpon>201810120846513_MODEL UPDATED4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810120924215_MODEL UPDATED5.resx">
+      <DependentUpon>201810120924215_MODEL UPDATED5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810141126586_InitialCreatexc.resx">
+      <DependentUpon>201810141126586_InitialCreatexc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810141558142_afterModelUpdate.resx">
+      <DependentUpon>201810141558142_afterModelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810150327206_UpdateModelNew.resx">
+      <DependentUpon>201810150327206_UpdateModelNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810150350436_UpdateModelNewx.resx">
+      <DependentUpon>201810150350436_UpdateModelNewx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\PTM\201810150943358_UpdateModelNewx1.resx">
+      <DependentUpon>201810150943358_UpdateModelNewx1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

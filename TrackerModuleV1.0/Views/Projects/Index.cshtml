@@ -1,15 +1,15 @@
 ﻿@model TrackerModuleV1._0.Models.PTM.Project
 @{
     ViewBag.Title = "Search Project";
-    List<SelectListItem> list = new List <SelectListItem>();
-    list.Add(new SelectListItem() { Text = "Project1", Value = "101" });
-    list.Add(new SelectListItem() { Text = "Project2", Value = "202" });
-    list.Add(new SelectListItem() { Text = "Project3", Value = "303" });
+    //List<SelectListItem> list = new List <SelectListItem>();
+    //list.Add(new SelectListItem() { Text = "Project1", Value = "101" });
+    //list.Add(new SelectListItem() { Text = "Project2", Value = "202" });
+    //list.Add(new SelectListItem() { Text = "Project3", Value = "303" });
 }
 
 <h2>Index</h2>
 
-@using (Html.BeginForm("Search","Project",FormMethod.Post))
+@using (Html.BeginForm("Search", "Projects", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -19,9 +19,12 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.Label("Project Name", htmlAttributes: new { @class = "control-label col-md-2" })
+        @*@Html.Label(ViewBag.spn as String)*@
         <div class="col-md-10">
-            @Html.DropDownList("ProjectListName", ViewBag.projectListName as SelectList, "Select", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.ProjectName, ViewBag.projectListName as SelectList, "--Select--", new { @class = "form-control" })
+            @*@Html.DropDownList("ProjectListName", ViewBag.projectListName as SelectList, "Select", new { @class = "form-control" })*@
         </div>
+        
     </div>
     <div class="form-group">
         @Html.Label(" ", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,7 +35,8 @@
     <div class="form-group">
         @Html.Label("Project ID", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("ProjectListId", ViewBag.projectListId as SelectList, "Select", new { @class = "form-control" })
+            @Html.DropDownListFor(m => m.ProjectId, ViewBag.projectListId as SelectList, "--Select--", new { @class = "form-control"})
+            @*@Html.DropDownList("ProjectListId", ViewBag.projectListId as SelectList, "Select", new { @class = "form-control" })*@
         </div>
     </div>
     <div class="form-group">
@@ -44,8 +48,8 @@
     <div class="form-group">
         @Html.Label("Short Description", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextBox("StudentName", null, new { @class = "form-control" })
-
+            @*@Html.TextBox("Description", null, new { @class = "form-control" })*@
+            @Html.EditorFor(m=> m.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
 

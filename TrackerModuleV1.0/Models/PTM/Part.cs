@@ -8,7 +8,8 @@ namespace TrackerModuleV1._0.Models.PTM
 {
     public class Part
     {
-        public int PartId { get; set; }
+        [Key]
+        public string PartId { get; set; }
         [Required]
         public string PartName { get; set; }
         public string PartDescription { get; set; }
@@ -18,10 +19,12 @@ namespace TrackerModuleV1._0.Models.PTM
         public string VendorPartNumber { get; set; }
         public int StockQuantity { get; set; }
         public string Status { get; set; }
-        public int CreatedUserId{get; set;}
+        public string CreatedUserId{get; set;}
+        public string ApprovedUserId { get; set; }
         public User CreatedBy { get; set; }
         public User ApproveBy { get; set; }
 
         public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<Level> Levels { get; set; }
     }
 }

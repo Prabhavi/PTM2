@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -19,11 +20,16 @@ namespace TrackerModuleV1._0.Controllers
         public ActionResult Index()
         {
             PTMContex ptmContex = new PTMContex();
+            //List<SelectListItem> items = new List<SelectListItem>();
+            //items.Add(new SelectListItem { Text = "option1", Value = "option2" });
+            //items.Add(new SelectListItem { Text = "option2", Value = "option2" });
+
             var getProjectList = ptmContex.Projects.ToList();
             SelectList Idlist = new SelectList(getProjectList, "ProjectId", "ProjectId");
             SelectList Namelist = new SelectList(getProjectList, "ProjectName", "ProjectName");
             ViewBag.projectListId = Idlist;
             ViewBag.projectListName = Namelist;
+            //ViewBag.selectedItemList = items;
             return View();
 
         }
@@ -117,6 +123,7 @@ namespace TrackerModuleV1._0.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Project project = db.Projects.Find(id);
+            
             if (project == null)
             {
                 return HttpNotFound();
@@ -142,12 +149,37 @@ namespace TrackerModuleV1._0.Controllers
         /// <param name="projectName"></param>
         /// <param name="description"></param>
         /// <returns></returns>
-        public ActionResult Search(Project proj)
+        /// 
+        /// 
+        /// 
+        /// // POST: Projects/Search/
+        [HttpPost]
+        public ActionResult Search(Project prjctV)
         {
-            int proId = proj.ProjectId;
+            
+            string SProjectId = prjctV.ProjectId;
+            string SProjectName = prjctV.ProjectName;
+            Project project= new Project();
 
-            return View();
+
+            if (SProjectId != null)
+            {
+                project = db.Projects.Find(SProjectId);
+            }
+            else
+            {
+                string Sql = "Select * from Project where ";
+                if (SProjectName != null)
+                {
+                    Sql = Sql + "ProjectName= @a";
+                    project = db.Projects.SqlQuery(Sql, new SqlParameter("@a", SProjectName)).First();
+                    
+                }
+            }
+            return View("Details",project);
+
         }
+        
 
         protected override void Dispose(bool disposing)
         {
