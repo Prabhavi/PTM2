@@ -22,32 +22,42 @@ namespace TrackerModuleV1._0.Migrations.PTM
                 prjct.users.Add(context.Users.Single(u => u.FirstName == FirstName));
 
             }
-
-
         }
-        void AddorUpdatePart(PTMContex contex, string projectName,string partName)
+        void AddOrUpdateLevel_Part(PTMContex context, string levelId, string PartName)
         {
-            var prjct = contex.Projects.SingleOrDefault(p => p.ProjectName == projectName);
-            var prt = contex.parts.SingleOrDefault(i => i.PartName == partName);
-            if(prt != null)
+            var level = context.Levels.SingleOrDefault(p => p.levelId == levelId);
+            var part = context.Parts.SingleOrDefault(u => u.PartName == PartName);
+            if (part != null)
             {
-                prjct.parts.Add(contex.parts.Single(p => p.PartName == partName));
+                level.parts.Add(context.Parts.Single(u => u.PartName == PartName));
+
             }
         }
+        void AddOrUpdateProject_Level(PTMContex context, string ProjectName, string levelId)
+        {
+            var prjct = context.Projects.SingleOrDefault(p => p.ProjectName == ProjectName);
+            var level = context.Levels.SingleOrDefault(l => l.levelId == levelId);
+            if (level != null)
+            {
+                prjct.Levels.Add(context.Levels.Single(u => u.levelId == levelId));
+
+            }
+        }
+        void AddorUpdatePart(PTMContex contex, string projectName, string partName)
+        {
+            var prjct = contex.Projects.SingleOrDefault(p => p.ProjectName == projectName);
+            var prt = contex.Parts.SingleOrDefault(i => i.PartName == partName);
+            if (prt != null)
+            {
+                prjct.parts.Add(contex.Parts.Single(p => p.PartName == partName));
+            }
+        }
+
         protected override void Seed(TrackerModuleV1._0.Data.PTMContex context)
         {
             //  This method will be called after migrating to the latest version.
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            
 
             context.Projects.AddOrUpdate(
                 p =>  p.ProjectName, DummyData.getProjects().ToArray());
@@ -57,10 +67,17 @@ namespace TrackerModuleV1._0.Migrations.PTM
                 u => new { u.FirstName, u.LastName }, DummyData.getUsers().ToArray());
             context.SaveChanges();
 
-            context.parts.AddOrUpdate(
-                p => p.PartId, DummyData.getParts(context).ToArray());
+            context.Parts.AddOrUpdate(
+                p => p.PartName, DummyData.getParts(context).ToArray());
             context.SaveChanges();
+
+            context.Levels.AddOrUpdate(
+                p=> p.levelId,DummyData.getLevels(context).ToArray());
+            context.SaveChanges();
+
+
             AddOrUpdateUser(context, "Wafer Sorter", "Abienash");
+            AddOrUpdateUser(context, "Wafer Sorter", "Leo");
             AddOrUpdateUser(context, "Bakeout Chamber", "Leo");
             AddOrUpdateUser(context, "Carbon Nanotube CVD Chamber", "Devinda");
             AddOrUpdateUser(context, "Process Kit Transporter", "Danny");
@@ -69,8 +86,18 @@ namespace TrackerModuleV1._0.Migrations.PTM
             AddorUpdatePart(context, "Wafer Sorter", "ScrewDriver");
             AddorUpdatePart(context, "Process Kit Transporter", "BreadBoard");
             AddorUpdatePart(context, "Process Kit Transporter", "ScrewDriver");
-            context.SaveChanges();
 
+            //AddOrUpdateProject_Level(context, "Wafer Sorter", "PRO00101");
+            //AddOrUpdateProject_Level(context, "Wafer Sorter", "PRO00102");
+            //AddOrUpdateProject_Level(context, "Wafer Sorter", "PRO00103");
+
+
+            AddOrUpdateLevel_Part(context, "PRO00101", "ScrewDriver");
+            AddOrUpdateLevel_Part(context, "PRO00101", "BreadBoard");
+            AddOrUpdateLevel_Part(context, "PRO00201", "BreadBoard");
+
+            context.SaveChanges();
+            //PRO00201
         }
     }
 }

@@ -10,12 +10,14 @@ namespace TrackerModuleV1._0.Models.PTM
     {
         
         [Key]
-        public int ProjectId { get; set; }
+        public string ProjectId { get; set; }
         [Required]
         public string ProjectName { get; set; }
         public string ShortDescription { get; set; }
 
-        //public int UserId { get; set; }
+        
+        public virtual ICollection<Level> Levels { get; set; }
+
         public virtual ICollection<User> users { get; set; }
 
         public virtual ICollection <Part> parts { get; set; }

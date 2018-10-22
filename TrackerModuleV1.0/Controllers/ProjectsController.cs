@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -19,11 +20,16 @@ namespace TrackerModuleV1._0.Controllers
         public ActionResult Index()
         {
             PTMContex ptmContex = new PTMContex();
+            //List<SelectListItem> items = new List<SelectListItem>();
+            //items.Add(new SelectListItem { Text = "option1", Value = "option2" });
+            //items.Add(new SelectListItem { Text = "option2", Value = "option2" });
+
             var getProjectList = ptmContex.Projects.ToList();
             SelectList Idlist = new SelectList(getProjectList, "ProjectId", "ProjectId");
             SelectList Namelist = new SelectList(getProjectList, "ProjectName", "ProjectName");
             ViewBag.projectListId = Idlist;
             ViewBag.projectListName = Namelist;
+            //ViewBag.selectedItemList = items;
             return View();
 
         }
@@ -35,14 +41,14 @@ namespace TrackerModuleV1._0.Controllers
             
         }
 
-        // GET: Projects/Details/5
-        public ActionResult Details(int? id)
+
+        //GET: Projects/Details/PRO001
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            
             Project project = db.Projects.Find(id);
             if (project == null)
             {
@@ -51,9 +57,30 @@ namespace TrackerModuleV1._0.Controllers
             return View(project);
         }
 
+
+        // GET: Projects/Details/5
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+            
+        //    Project project = db.Projects.Find(id);
+        //    if (project == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(project);
+        //}
+
         // GET: Projects/Create
         public ActionResult Create()
         {
+            PTMContex ptmContex = new PTMContex();
+            var getUserList = ptmContex.Users.ToList();
+            SelectList Namelist = new SelectList(getUserList, "FullName", "FullName");
+            ViewBag.UserListName = Namelist;
             return View();
         }
 
@@ -79,7 +106,7 @@ namespace TrackerModuleV1._0.Controllers
         }
 
         // GET: Projects/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -98,7 +125,7 @@ namespace TrackerModuleV1._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProjectId,ProjectName,UserId")] Project project)
+        public ActionResult Edit([Bind(Include = "ProjectId,ProjectName,ShortDescription")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -117,6 +144,7 @@ namespace TrackerModuleV1._0.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Project project = db.Projects.Find(id);
+            
             if (project == null)
             {
                 return HttpNotFound();
@@ -142,12 +170,37 @@ namespace TrackerModuleV1._0.Controllers
         /// <param name="projectName"></param>
         /// <param name="description"></param>
         /// <returns></returns>
-        public ActionResult Search(Project proj)
+        /// 
+        /// 
+        /// 
+        /// // POST: Projects/Search/
+        [HttpPost]
+        public ActionResult Search(Project prjctV)
         {
-            int proId = proj.ProjectId;
+            
+            string SProjectId = prjctV.ProjectId;
+            string SProjectName = prjctV.ProjectName;
+            Project project= new Project();
 
-            return View();
+
+            if (SProjectId != null)
+            {
+                project = db.Projects.Find(SProjectId);
+            }
+            else
+            {
+                string Sql = "Select * from Project where ";
+                if (SProjectName != null)
+                {
+                    Sql = Sql + "ProjectName= @a";
+                    project = db.Projects.SqlQuery(Sql, new SqlParameter("@a", SProjectName)).First();
+                    
+                }
+            }
+            return View("Details",project);
+
         }
+        
 
         protected override void Dispose(bool disposing)
         {

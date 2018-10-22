@@ -12,7 +12,7 @@ namespace TrackerModuleV1._0.Models.PTM
         //{
         //    this.projects = new HashSet<Project>();        }
         [Key]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         [Display(Name = "Full Name")]
