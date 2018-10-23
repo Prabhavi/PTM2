@@ -8,24 +8,23 @@
 
 <div class="row">
     <div class="col-md-4" >
-        @*<h2>Check Projects</h2>*@
-        @*<img src="~/Content/images/projects.png" alt="ProjectIcon" width=50% height=50%>
-        <input type="submit" value="Projects" onclick="location.href='@Url.Action("Index", "Projects")'" />*@
+        
+        
         <p>
             <li>@Html.ActionLink("Project", "Index", "Projects")</li>
         </p>
-        @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
+        
     </div>
-    <div class="col-md-4" @*style="background-color:aquamarine;margin:20px 20px 20px 20px"*@>
-        @*<img src="~/Content/images/users.png" alt="UsersIcon" width=50% height=50%>*@
+    <div class="col-md-4" >
+        
         
         <p>
             <li>@Html.ActionLink("Collaborators", "Index", "Users")</li>
         </p>
     </div>
-    <div class="col-md-4" @*style="background-color:aquamarine;margin:20px 20px 20px 20px"*@>
+    <div class="col-md-4" >
         <h2>Inventory</h2>
 
-        @*<img src="~/Content/images/inventory.png" alt="InventoryIcon" width=50% height=50%>*@
+        
     </div>
 </div>
