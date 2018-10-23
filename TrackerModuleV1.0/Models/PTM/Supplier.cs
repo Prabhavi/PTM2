@@ -12,6 +12,7 @@ namespace TrackerModuleV1._0.Models.PTM
         {
             this.Parts = new HashSet<Part>();
         }
+        
         [Key]
         public string SupplierId { get; set; }
         public string SupplierName { get; set; }
