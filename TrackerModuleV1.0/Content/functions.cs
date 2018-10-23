@@ -57,4 +57,13 @@ namespace TrackerModuleV1._0.Content
         Simulation_Results= 004,
         Ceritfication= 005
     }
+
+    public enum MechanicalPart_SubCategory
+    {
+        Automation_Components= 100,
+        Framing_Support= 200,
+        Fasteners= 300,
+        Materials= 500 ,
+        Accessories_Other= 600
+    }
 }
