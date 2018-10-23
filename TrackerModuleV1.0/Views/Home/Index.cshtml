@@ -3,29 +3,25 @@
 }
 
 <div class="jumbotron">
-    
+
 </div>
 
 <div class="row">
-    <div class="col-md-4" >
-        @*<h2>Check Projects</h2>*@
-        @*<img src="~/Content/images/projects.png" alt="ProjectIcon" width=50% height=50%>
-        <input type="submit" value="Projects" onclick="location.href='@Url.Action("Index", "Projects")'" />*@
+    <div class="col-md-4">
+        <h2>Check Projects</h2>
         <p>
             <li>@Html.ActionLink("Project", "Index", "Projects")</li>
         </p>
         @*<p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>*@
     </div>
-    <div class="col-md-4" @*style="background-color:aquamarine;margin:20px 20px 20px 20px"*@>
-        @*<img src="~/Content/images/users.png" alt="UsersIcon" width=50% height=50%>*@
-        
-        <p>
-            <li>@Html.ActionLink("Collaborators", "Index", "Users")</li>
-        </p>
-    </div>
-    <div class="col-md-4" @*style="background-color:aquamarine;margin:20px 20px 20px 20px"*@>
-        <h2>Inventory</h2>
+    <div class="col-md-4">
+        <h2>Check Colloborators</h2>
 
-        @*<img src="~/Content/images/inventory.png" alt="InventoryIcon" width=50% height=50%>*@
+        <p><li>@Html.ActionLink("Collaborators", "Index", "Users")</li></p>
+    </div>
+    <div class="col-md-4">
+        @*<h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>*@
     </div>
 </div>
