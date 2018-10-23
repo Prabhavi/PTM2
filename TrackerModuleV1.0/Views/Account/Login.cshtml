@@ -1,4 +1,8 @@
-﻿@using TrackerModuleV1._0.Models
+﻿@{
+    Layout = "~/Views/Shared/_LayoutLoginPage.cshtml";
+}
+
+@using TrackerModuleV1._0.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
@@ -30,10 +34,10 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
+                        @*<div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>*@
                     </div>
                 </div>
                 <div class="form-group">
@@ -52,9 +56,9 @@
         </section>
     </div>
     <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
+        @*<section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>*@
     </div>
 </div>
 
