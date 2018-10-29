@@ -338,8 +338,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\inventory.png" />
+    <Content Include="Content\images\inventory3.png" />
+    <Content Include="Content\images\parts4.png" />
     <Content Include="Content\images\projects.png" />
+    <Content Include="Content\images\projects3.png" />
+    <Content Include="Content\images\suppliers3.png" />
     <Content Include="Content\images\users.png" />
+    <Content Include="Content\images\users4.png" />
     <Content Include="Docs\Migrations.txt" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
